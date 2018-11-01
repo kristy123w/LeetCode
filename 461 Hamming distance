@@ -1,0 +1,8 @@
+//  static int	bitCount(int i)
+//  Returns the number of one-bits in the two's complement binary representation of the specified int value.
+
+class Solution {
+    public int hammingDistance(int x, int y) {
+        return Integer.bitCount(x^y);
+    }
+}

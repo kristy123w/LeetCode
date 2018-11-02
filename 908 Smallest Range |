@@ -1,0 +1,12 @@
+class Solution {
+    public int smallestRangeI(int[] A, int K) {
+        int res=0;
+        int len=A.length;
+        Arrays.sort(A);
+        if(A[len-1]-A[0]<=2*K)
+            res = 0;
+        else
+            res = A[len-1]-K-(A[0]+K);
+        return res;
+    }
+}

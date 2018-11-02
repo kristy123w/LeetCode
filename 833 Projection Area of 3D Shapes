@@ -1,0 +1,28 @@
+class Solution {
+    public int projectionArea(int[][] grid) {
+        int top = grid.length*grid[0].length;
+        int left = 0;   //look from row
+        int right = 0;
+        // maxmum number in each row add to left;
+        for(int i=0; i<grid.length; i++){
+            int max=0;
+            for(int j =0; j<grid[0].length; j++){
+                if(grid[i][j]==0) top -= 1;
+                if(grid[i][j]>max)
+                    max=grid[i][j];
+            }
+            left += max;
+        }
+        // maxmum number in each colum add to right;
+        for(int i=0; i<grid[0].length; i++){
+            int max=0;
+            for(int j =0; j<grid.length; j++){
+                if(grid[j][i]>max)
+                    max=grid[j][i];
+            }
+            right += max;
+        }
+        return top+left+right;
+        
+    }
+}

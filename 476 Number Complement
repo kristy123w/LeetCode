@@ -1,0 +1,27 @@
+// first type solution 
+class Solution {
+    public int findComplement(int num) {
+        String binaryString = Integer.toBinaryString(num);
+        String tmp = "";
+        for(char c:binaryString.toCharArray()){
+            if(c=='0')
+                tmp = tmp + "1";
+            else
+                tmp = tmp + "0";
+
+        }
+        return Integer.parseInt(tmp,2);
+    }
+}
+
+//second type solution
+class Solution {
+    public int findComplement(int num) {
+        int ones = (Integer.highestOneBit(num)<<1)-1;    
+        return num^ones;
+    }
+}
+
+
+
+
